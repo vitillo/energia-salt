@@ -16,6 +16,9 @@ winpython:
     - exists
     - name: C:\WinPython\python-3.3.3.amd64 # once salt's __context___ bug is fixed use regexp to find version number
 
+mysisgit:
+  pkg.installed
+
 vcredist2010:
   pkg.installed
 
@@ -40,7 +43,7 @@ bla:
 
 energia:
   git.latest:
-    - name: https://github.com/vitillo/energia
+    - name: http://github.com/vitillo/energia
     - target: C:\energia
   cmd.run:
     - name: start python "C:\energia\benchmark.py -a {{grains['master']}}"
